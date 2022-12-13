@@ -28,9 +28,8 @@ jobs:
         password: ${{ secrets.SECRET_TOKEN }}
         
     - name: Build and push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
-        registry: ghcr.io
         context: .
         push: true
-        tags: gwmelody/birthbot:latest
+        tags: ghcr.io/ziwoo/birthbot:latest
