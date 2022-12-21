@@ -15,7 +15,7 @@ num = random.randint(0, len(image_array)-1)
 image = image_array[num]
 
 SLACK_TOKEN = secret_token["token"]
-SLACK_CHANNEL = "#ch-slackbot-test"
+SLACK_CHANNEL = "#slackbot-test"
 
 json_path = './birthlist.json'
 with open(json_path, 'r') as birth_json:
