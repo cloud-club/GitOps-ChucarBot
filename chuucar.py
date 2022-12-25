@@ -14,7 +14,6 @@ with open(image_path, 'r') as image_json:
 num = random.randint(0, len(image_array)-1)
 image = image_array[num]
 
-SLACK_TOKEN = secret_token["token"]
 SLACK_CHANNEL = "#slackbot-test"
 
 json_path = './birthlist.json'
@@ -22,7 +21,7 @@ with open(json_path, 'r') as birth_json:
     b_dict = json.load(birth_json)
 
 def chuucar_send_msg(slack_msg):
-    client = slack_sdk.WebClient(token=SLACK_TOKEN)
+    client = slack_sdk.WebClient(token=slack-token)
     data = {
         "attachments":[{
             "image_url": image
