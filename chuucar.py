@@ -3,9 +3,9 @@ import slack_sdk
 import random
 from datetime import date, datetime, timezone, timedelta
 
-token_path = './token.json'
-with open(token_path, 'r') as token_json:
-    secret_token = json.load(token_json)
+# token_path = './token.json'
+# with open(token_path, 'r') as token_json:
+#     secret_token = json.load(token_json)
 
 image_path = './image.json'
 with open(image_path, 'r') as image_json:
