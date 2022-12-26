@@ -1,6 +1,6 @@
 import os
 import json
-import slack_sdk
+# import slack_sdk
 import random
 from slackclient import SlackClient
 from datetime import date, datetime, timezone, timedelta
@@ -13,7 +13,6 @@ num = random.randint(0, len(image_array)-1)
 image = image_array[num]
 
 slack_token = SlackClient(os.environ.get('SLACK_TOKEN'))
-print(slack_token)
 SLACK_CHANNEL = "#slackbot-test"
 
 json_path = './birthlist.json'
