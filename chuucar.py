@@ -1,11 +1,9 @@
+import os
 import json
 import slack_sdk
 import random
+from slackclient import SlackClient
 from datetime import date, datetime, timezone, timedelta
-
-# token_path = './token.json'
-# with open(token_path, 'r') as token_json:
-#     secret_token = json.load(token_json)
 
 image_path = './image.json'
 with open(image_path, 'r') as image_json:
@@ -14,6 +12,8 @@ with open(image_path, 'r') as image_json:
 num = random.randint(0, len(image_array)-1)
 image = image_array[num]
 
+slack_token = SlackClient(os.environ.get('SLACK_TOKEN'))
+print(slack_token)
 SLACK_CHANNEL = "#slackbot-test"
 
 json_path = './birthlist.json'
@@ -21,13 +21,14 @@ with open(json_path, 'r') as birth_json:
     b_dict = json.load(birth_json)
 
 def chuucar_send_msg(slack_msg):
-    client = slack_sdk.WebClient(token=slack-token)
+    # client = slack_sdk.WebClient(token=slack_token)
     data = {
         "attachments":[{
             "image_url": image
         }]
     }
-    client.chat_postMessage(channel=SLACK_CHANNEL,text=slack_msg, data=json.dumps(data))
+    # client.chat_postMessage(channel=SLACK_CHANNEL,text=slack_msg, data=json.dumps(data))
+    slack_token.api_call("chat.postMessage", channel=SLACK_CHANNEL,text=slack_msg, data=json.dumps(data))
 
 KST = timezone(timedelta(hours=9))
 today=datetime.now(KST)
