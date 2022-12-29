@@ -1,7 +1,7 @@
 # GitOps-study
 🧐 CI/CD study를 위한 birth-slackbot
 
-# 토큰 설정 - 두가지 방법
+## 토큰 설정 - 두가지 방법
 1. 환경변수 임시 적용(export)
 
 ```$export SLACK_TOKEN=토큰값```
