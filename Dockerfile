@@ -2,7 +2,6 @@ FROM python:3.10.8-slim
 
 LABEL name = "ziwoo"
 
-
 WORKDIR /usr/src/app
 
 COPY . .
