@@ -1,6 +1,6 @@
 import os
 import json
-# import slack_sdk
+import slack_sdk
 import random
 from slackclient import SlackClient
 from datetime import date, datetime, timezone, timedelta
@@ -13,7 +13,7 @@ num = random.randint(0, len(image_array)-1)
 image = image_array[num]
 
 slack_token = SlackClient(os.environ.get('SLACK_TOKEN'))
-SLACK_CHANNEL = "#slackbot-test"
+SLACK_CHANNEL = "#birthday"
 
 json_path = './birthlist.json'
 with open(json_path, 'r') as birth_json:
@@ -37,4 +37,5 @@ for key,val in b_dict.items():
 
     if today.month==date_of_birth.month and today.day == date_of_birth.day:
         chat = "오늘은 바로바로 귀여운 클둥이, "+ key + "의 생일입니다!"+" 다들 소리질러~!!"
+        # final = chat + random
         chuucar_send_msg(chat)
