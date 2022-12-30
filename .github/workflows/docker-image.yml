@@ -42,7 +42,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ github.GITHUB_SHA }}
           labels: ${{ steps.meta.outputs.labels }}
       
       - name: Read Manifest Repo
