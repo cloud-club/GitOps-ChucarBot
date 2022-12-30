@@ -55,7 +55,7 @@ jobs:
       - name: Change env values of cronjob manifest
         uses: mikefarah/yq@master
         with:
-          cmd: yq '.image.tag = "${{ steps.meta.outputs.tags }}"' 'birthbot-cronjob.yaml'
+          cmd: yq '.image.tag = "${{ github.GITHUB_SHA }}"' 'birthbot-cronjob.yaml'
       
       - name: Push outputs to manifest repo
         uses: cpina/github-action-push-to-another-repository@main
