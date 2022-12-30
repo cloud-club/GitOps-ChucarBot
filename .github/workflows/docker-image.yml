@@ -66,5 +66,5 @@ jobs:
           source-directory: '.'
           destination-github-username: 'cloud-club'
           destination-repository-name: 'GitOps-ChucarBot-Manifest'
-          commit-message: Update image tag to version - ${{ steps.meta.outputs.version }}
+          commit-message: Update image tag to version; ${{ steps.meta.outputs.version }}
           target-branch: main
