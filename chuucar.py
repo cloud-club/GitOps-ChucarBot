@@ -36,6 +36,6 @@ for key,val in b_dict.items():
     date_of_birth = date(int(val[0:4]), int(val[4:6]), int(val[6:8]))
 
     if today.month==date_of_birth.month and today.day == date_of_birth.day:
-        chat = "오늘은 바로바로 귀여운 클둥이, "+ key + "의 생일입니다!"+" 다들 소리질러~!!"
+        chat = "오늘은 바로바로 귀여운 클둥이, *"+ key + "* 의 생일입니다!"+" 다들 소리질러~!!"
         # final = chat + random
         chuucar_send_msg(chat)
