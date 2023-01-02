@@ -13,7 +13,7 @@ num = random.randint(0, len(image_array)-1)
 image = image_array[num]
 
 slack_token = SlackClient(os.environ.get('SLACK_TOKEN'))
-SLACK_CHANNEL = "#birthday"
+SLACK_CHANNEL = "#birthbot-cyj"
 
 json_path = './birthlist.json'
 with open(json_path, 'r') as birth_json:
